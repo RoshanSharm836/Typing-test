@@ -3,7 +3,7 @@ import React from "react";
 export default function Navbar() {
   return (
     <div className="navbar">
-      <span>Typing Test</span>
+      <a href="/">Typing Test</a>
     </div>
   );
 }

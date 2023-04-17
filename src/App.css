@@ -8,6 +8,51 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   /* border: 1px solid red; */
 }
+a {
+  text-decoration: none;
+  color: #fff9dc;
+  cursor: pointer;
+}
+
+/* media */
+@media screen and (max-width: 880px) {
+  .Popup {
+    flex-direction: column-reverse !important;
+    align-items: center;
+    font-size: 24px !important;
+    padding: 10px 0;
+  }
+  .bgheading {
+    font-size: 28px !important;
+  }
+  .bg {
+    width: 80% !important;
+  }
+  .Popup > img {
+    width: 50%;
+  }
+  .box {
+    font-size: 18px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Popup {
+    font-size: 14px !important;
+  }
+  .bgheading {
+    font-size: 28px !important;
+  }
+  .bg {
+    width: 80% !important;
+  }
+  .Popup > img {
+    width: 50%;
+  }
+  .box {
+    font-size: 18px !important;
+  }
+}
+
 textarea {
   margin: 50px auto;
   width: 80%;
@@ -17,8 +62,9 @@ textarea {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+  font-size: xx-large;
+
   padding: 20px 0px 20px 80px;
-  color: #d1edd1;
   background-color: #455a64;
 }
 
@@ -57,7 +103,7 @@ textarea {
   gap: 10px;
   background-color: #455a64;
   color: white;
-  padding: 10px;
+  padding: 20px;
 }
 .Ans {
   width: 100%;
@@ -81,10 +127,10 @@ textarea {
   font-weight: 500;
   display: flex;
   flex-direction: row;
+  text-transform: capitalize;
   flex-wrap: nowrap;
 }
 .bg {
-  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +140,15 @@ textarea {
   width: 60%;
   color: #dbdbdb;
 }
-.Popup span {
+.bgheading {
+  display: flex;
+  align-items: center;
+  color: #3e535c;
+  font-size: 40px;
+  font-weight: 800;
+  font-family: cursive;
+}
+.Popup > span {
   height: 40px;
   padding: 10px;
   cursor: pointer;
@@ -216,15 +270,15 @@ textarea {
 }
 
 .button-59:hover {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+  border-color: #ffc727;
+  color: #ffc727;
+  fill: #ffc727;
 }
 
 .button-59:active {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+  border-color: #ffc727;
+  color: #ffc727;
+  fill: #ffc727;
 }
 
 @media (min-width: 768px) {

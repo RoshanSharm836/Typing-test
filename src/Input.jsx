@@ -8,7 +8,7 @@ export default function Input() {
   const [count, setCount] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wronge, setWronge] = useState(0);
-  const [seconds, setSeconds] = useState(60);
+  const [seconds, setSeconds] = useState(1);
   const [isActive, setIsActive] = useState(false);
   const [wpmchecker, setWpmchecker] = useState(false);
   const [answer, setAnswer] = useState(1);
@@ -37,6 +37,11 @@ export default function Input() {
     setSeconds(60);
     setWronge(0);
     setWpmchecker(false);
+    let cssc = document.querySelectorAll(".wronge");
+    let cssw = document.querySelectorAll(".correct");
+
+    cssc.forEach((el) => el.classList.remove("wronge"));
+    cssw.forEach((el) => el.classList.remove("correct"));
   }
   function handleKeyDown(event) {
     const { key } = event;
