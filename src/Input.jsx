@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Popup from "./Popup";
 export default function Input() {
   let data =
@@ -8,10 +8,11 @@ export default function Input() {
   const [count, setCount] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wronge, setWronge] = useState(0);
-  const [seconds, setSeconds] = useState(10);
+  const [seconds, setSeconds] = useState(60);
   const [isActive, setIsActive] = useState(false);
   const [wpmchecker, setWpmchecker] = useState(false);
   const [answer, setAnswer] = useState(1);
+  const textarea = useRef();
 
   useEffect(() => {
     if (seconds > 0 && isActive) {
@@ -22,6 +23,7 @@ export default function Input() {
     } else if (seconds === 0) {
       setAnswer(Math.floor(keysPressed.join("").split(" ").length));
       setWpmchecker(true);
+      textarea.current.value = "";
       console.log("answer", answer);
       setIsActive(false);
     }
@@ -69,10 +71,7 @@ export default function Input() {
           return <span key={i}>{el}</span>;
         })}
       </div>
-      {/* <div
-        className="c"
-        // style={{ backgroundColor: "#ff000059", width: count * 10.3 + "px" }}
-      ></div> */}
+
       <div className="Ans">
         <div>
           <span>Correct Words:{correct}</span>
@@ -89,20 +88,16 @@ export default function Input() {
         name="w3review"
         rows="10"
         cols="50"
+        ref={textarea}
         placeholder="Start typing.... "
         onKeyDown={(e) => {
           handleKeyDown(e, count);
         }}
       ></textarea>
-      {wpmchecker ? (
-        <button className="button-59" onClick={reset}>
-          Reset
-        </button>
-      ) : (
-        ""
-      )}
+
       {wpmchecker ? (
         <Popup
+          data={reset}
           correct={correct}
           wronge={wronge}
           wpm={answer}

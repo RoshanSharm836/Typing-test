@@ -1,6 +1,7 @@
 import React from "react";
 
-function Popup({ wpm, total, correct, wronge, setWpmchecker }) {
+function Popup({ wpm, total, correct, wronge, setWpmchecker, data }) {
+  // console.log("data", data);
   return (
     <div className="Popup">
       <img src="../Typing-cuate.svg" alt="" width="35%" />
@@ -15,9 +16,9 @@ function Popup({ wpm, total, correct, wronge, setWpmchecker }) {
           Your speed was <span className="highlight">{wpm} wpm</span> with{" "}
           {total}% accuracy!
         </span>
-        <a href="/" className="button-59">
-          Home
-        </a>
+        <button className="button-59" onClick={data}>
+          Reset
+        </button>
       </div>
       <span
         onClick={() => {
