@@ -1,38 +1,235 @@
-.App {
+body {
+  background-color: #ffc727;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  /* border: 1px solid red; */
+}
+textarea {
+  margin: 50px auto;
+  width: 80%;
+  display: block;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px 0px 20px 80px;
+  color: #d1edd1;
+  background-color: #455a64;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  width: 90%;
+  padding: 20px;
+  letter-spacing: 3px;
+  margin: auto;
+  z-index: 1000;
+  color: rgb(168, 166, 166);
+  font-weight: 100;
+  font-size: 30px;
+  background-color: aliceblue;
+}
+.box span {
+  margin: 0 0.5px;
+  line-height: 1.5;
+  padding: 2px;
   text-align: center;
+  border-radius: 2.5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Ans div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  gap: 10px;
+  background-color: #455a64;
+  color: white;
+  padding: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Ans {
+  width: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.correct {
+  color: #70f970;
+  background-color: #d1edd1;
+}
+.wronge {
+  background-color: rgb(243 219 219);
+  color: rgb(248, 120, 120);
+}
+.Popup {
+  position: fixed;
+  top: 15rem;
+  z-index: 1000;
+  width: 85%;
+  background-color: #a1a1a1;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.bg {
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  gap: 30px;
+  width: 60%;
+  color: #dbdbdb;
+}
+.Popup span {
+  height: 40px;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.highlight {
+  color: #70f970;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* keyboard */
+.keyboard {
+  position: relative;
+  top: 15rem;
+}
+.keyboard-base {
+  max-width: 1085px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(197, 197, 197);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(30, 30px);
+  grid-template-rows: repeat(5, 60px);
+  grid-gap: 5px;
+}
+
+.key {
+  background-color: rgb(243, 243, 243);
+  border: 2px solid black;
+  border-radius: 5px;
+  grid-column: span 2;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 17px;
+}
+
+.key:hover {
+  border: 1px solid #eeeeee;
+}
+
+.delete {
+  grid-column: span 4;
+}
+
+.tab {
+  grid-column: span 3;
+}
+
+.backslash {
+  grid-column: span 3;
+}
+
+.capslock {
+  grid-column: span 4;
+}
+
+.return {
+  grid-column: span 4;
+}
+
+.leftshift {
+  grid-column: span 5;
+}
+
+.rightshift {
+  grid-column: span 5;
+}
+
+.leftctrl {
+  grid-column: span 3;
+}
+
+.command {
+  grid-column: span 3;
+  font-size: 14px;
+}
+
+.space {
+  grid-column: span 13;
+}
+.active {
+  background-color: pink;
+}
+/* end keyboard */
+
+/* CSS */
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.button-59:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
   }
 }
+/* buttom */
