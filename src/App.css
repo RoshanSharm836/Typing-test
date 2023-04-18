@@ -1,6 +1,12 @@
 body {
-  background-color: #ffc727;
+  background-image: url("pic.jpeg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #aedbd9;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -56,6 +62,7 @@ a {
 textarea {
   margin: 50px auto;
   width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: block;
 }
 .navbar {
@@ -86,6 +93,7 @@ textarea {
   color: rgb(168, 166, 166);
   font-weight: 100;
   font-size: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: aliceblue;
 }
 .box span {
@@ -107,6 +115,7 @@ textarea {
 }
 .Ans {
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .correct {
   color: #70f970;
@@ -121,7 +130,8 @@ textarea {
   top: 15rem;
   z-index: 1000;
   width: 85%;
-  background-color: #a1a1a1;
+  background-color: #022045;
+
   border-radius: 10px;
   font-size: 28px;
   font-weight: 500;
@@ -143,7 +153,7 @@ textarea {
 .bgheading {
   display: flex;
   align-items: center;
-  color: #3e535c;
+  color: #fff;
   font-size: 40px;
   font-weight: 800;
   font-family: cursive;
@@ -241,12 +251,12 @@ textarea {
 .button-59 {
   align-items: center;
   background-color: #fff;
-  border: 2px solid #000;
+  border: 2px solid #fff;
   box-sizing: border-box;
-  color: #000;
+  color: #ffffff;
   cursor: pointer;
   display: inline-flex;
-  fill: #000;
+  fill: #fffefe;
   font-family: Inter, sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -265,22 +275,44 @@ textarea {
   touch-action: manipulation;
 }
 
-.button-59:focus {
-  color: #171e29;
+/* CSS */
+.button-59 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(83, 193, 221, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.button-59:hover {
-  border-color: #ffc727;
-  color: #ffc727;
-  fill: #ffc727;
+.button-59:after {
+  content: "";
+  background-color: rgb(69 112 129);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
 }
 
-.button-59:active {
-  border-color: #ffc727;
-  color: #ffc727;
-  fill: #ffc727;
+.button-59:hover:after {
+  top: 0px;
+  left: 0px;
 }
 
+@media (min-width: 768px) {
+  .button-59 {
+    padding: 13px 50px 13px;
+  }
+}
 @media (min-width: 768px) {
   .button-59 {
     min-width: 170px;
